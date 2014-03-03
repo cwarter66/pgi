@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+		<meta charset="utf-8"/>
+		<meta name="HandheldFriendly" content="True"/>
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Agenday - </title>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+        <link href="/styles/stylesheet.css" rel="stylesheet" type="text/css"/>
+        <script>var ieLessThanTen = false;var d = new Date();</script>
+	    <!--[if lt IE 10]>
+	    	<script type="text/javascript">ieLessThanTen = true;</script>
+	        <script type="text/javascript" src="/scripts/html5.js"></script>
+			<script type="text/javascript" src="/scripts/selectivizr.js"></script>
+			<script type="text/javascript" src="/scripts/css3-mediaqueries.js"></script>
+	    <![endif]-->
+    </head>
+    <body>
+        <div class="page-frame">
+        	<header id="hero-container">
+        		<div><img id="hero" src="" width="1398" height="858" alt=""/></div>
+    			<div id="logo"><img src="/images/agenday-logo.png" width="261" height="115" alt="Agenday by PGi"/><br/></div>
+    			<h1 id="callout">The smarter way to take control of your day.</h1>
+    			<div id="cta">
+    				<img src="/images/circle-arrow.png" width="34" height="34" alt="Play Video"/> &nbsp; Explore for yourself in this video
+    			</div>
+    			<div id="download">
+    				<p>Download the Free App:</p>
+    				<div class="itunes"><img src="/images/badge-appstore.png" width="163" height="48" alt="AppStore"/></div>
+    				<div class="gplay"><img src="/images/badge-googleplay-cs.png" width="143" height="48" alt="Coming Soon"/></div>
+    			</div>
+    			<!-- <div id="img-overlay"><img src="/images/hand-phone.png" width="611" height="801" alt=""/></div> -->
+        	</header>
+        	<div class="divider"></div>
+        	<section class="section s-1">
+                <h2>Integrate with your calendar and contacts</h2>
+                <p>Agenday intelligently connects calendars, contacts and location in order to provide one-touch access to conference calls and web meetings, smart messaging to meeting attendees, turn-by-turn directions to meeting locations and more.</p>
+                <div id="s-1-img"><img src="/images/section-1.png" width="243" height="388"/>
+            </section>
+        	<section class="section s-2">
+                <h2>One-touch dialing into any conference</h2>
+                <p> Don't fumble with constantly changing dial-in numbers and pass-codes. The Agenday app automatically pulls your conference information and gives you one-touch entry to your conference call or web meeting.</p>
+                <div id="s-2-img"><img src="/images/section-2.png" width="284" height="408"/>
+            </section>
+        	<section class="section s-3">
+                <h2>Useful information and Content</h2>
+                <p>The Agenday mobile app analyzes your calendar and provides expert meeting tips and videos that are relevant to your day, including LinkedIn profiles of your meeting participants, making it easier than ever to learn who you're meeting with before your meeting starts. </p>
+                <div id="s-3-img"><img src="/images/section-3.png" width="248" height="403"/>
+            </section>
+        	<section class="section s-4">
+                <h2>Lower Cost Conference Calls</h2>
+                <p>The Agenday app saves you and your company money by automatically choosing the lowest-cost dialing method based on your location, all you have to do is tap.</p>
+                <div id="s-4-img"><img src="/images/section-4.png" width="249" height="413"/>
+            </section>
+        	<section class="section s-5">
+                <h2>Agenday has all the extras</h2>
+                <ol>
+                    <li>Smart messaging,</li>
+                    <li>Turn-by-turn directions,</li>
+                    <li>Smart notifications</li>
+                    <li>Meet Now, and then feature smart messaging as the phone screenshot</li>
+                </ol>
+                <div id="s-5-img"><img src="/images/section-5.png" width="259" height="402"/>
+            </section>
+        	<footer></footer>
+		</div>
+        <script type="text/javascript" src="/scripts/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/scripts/modernizr.custom.31944.js"></script>
+        <script type="text/javascript" src="/scripts/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript">
+        	$(document).ready(function() {
+        		var ww = $(window).width();
+        		var currentTime = d.getHours();
+        		if (ww > 1024) {
+	        		if ( currentTime >= 5 && currentTime < 11) {
+	        			$('#hero').attr("src","/images/_dtp-hero-morning.jpg");
+	        		} else if (currentTime >= 11 && currentTime < 17) {
+	        			$('#hero').attr("src","/images/_dtp-hero-afternoon.jpg");
+	        		} else if (currentTime >= 17 && currentTime < 5) {
+	        			$('#hero').attr("src","/images/_dtp-hero-evening.jpg");
+	        		}
+	        	}
+        	});
+        </script>
+	</body>
+</html>
+<!-- Sicial Links
+	Facebook: https://www.facebook.com/PgiFans
+	Twitter: https://twitter.com/pgi
+	Google+: https://plus.google.com/103269103696719871245/posts
+	YouTube: http://www.youtube.com/user/PGiPremiereGlobal
+	LinkedIn: http://www.linkedin.com/company/pgi_4863
+	-->
