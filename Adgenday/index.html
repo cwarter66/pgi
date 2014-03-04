@@ -5,9 +5,10 @@
 		<meta name="HandheldFriendly" content="True"/>
 		<meta name="MobileOptimized" content="320"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>Agenday - </title>
+        <title>Agenday - A smarter way to manage your day</title>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
         <link href="/styles/stylesheet.css" rel="stylesheet" type="text/css"/>
+        <link href="/styles/magnific-popup.css" rel="stylesheet" type="text/css"/>
         <script>var ieLessThanTen = false;var d = new Date();</script>
 	    <!--[if lt IE 10]>
 	    	<script type="text/javascript">ieLessThanTen = true;</script>
@@ -19,19 +20,26 @@
     <body>
         <div class="page-frame">
         	<header id="hero-container">
-        		<div><img id="hero" src="" width="1398" height="858" alt=""/></div>
+        		<div class="flex"><img id="hero" src="" width="1398" height="858" alt=""/></div>
     			<div id="logo"><img src="/images/agenday-logo.png" width="261" height="115" alt="Agenday by PGi"/><br/></div>
     			<h1 id="callout">The smarter way to take control of your day.</h1>
     			<div id="cta">
-    				<img src="/images/circle-arrow.png" width="34" height="34" alt="Play Video"/> &nbsp; Explore for yourself in this video
+                    <a class="popup-vimeo" href="http://www.youtube.com/watch?v=2p3i_TN0tvU">
+                    <!-- <a class="popup-vimeo" href="http://player.vimeo.com/video/83090768?title=0&byline=0&portrait=0&autoplay=1"> -->
+        				<img src="/images/circle-arrow.png" width="34" height="34" alt="Play Video"/> &nbsp; See how Agenday works
+                    </a>
     			</div>
     			<div id="download">
     				<p>Download the Free App:</p>
-    				<div class="itunes"><img src="/images/badge-appstore.png" width="163" height="48" alt="AppStore"/></div>
+    				<div class="itunes">
+                        <a href="http://itunes.com/apps/agendaysmartcalendarfreecalendarappforiphone" target="_blank" title="Agenday in the AppStore">
+                            <img src="/images/badge-appstore.png" width="163" height="48" alt="AppStore"/>
+                        </a>
+                    </div>
     				<div class="gplay"><img src="/images/badge-googleplay-cs.png" width="143" height="48" alt="Coming Soon"/></div>
     			</div>
-    			<!-- <div id="img-overlay"><img src="/images/hand-phone.png" width="611" height="801" alt=""/></div> -->
-        	</header>
+            </header>
+            <div class="clear"></div>
         	<div class="divider"></div>
         	<section class="section s-1">
                 <h2>Integrate with your calendar and contacts</h2>
@@ -63,29 +71,109 @@
                 </ol>
                 <div id="s-5-img"><img src="/images/section-5.png" width="259" height="402"/>
             </section>
-        	<footer></footer>
+        	<footer>
+                <div class="separator"></div>
+                <div class="footer-content">
+                    <div class="foot-dl">
+                        <p>Download the Free App:</p>
+                        <div class="itunes">
+                            <a href="http://itunes.com/apps/agendaysmartcalendarfreecalendarappforiphone" target="_blank" title="Agenday in the AppStore">
+                                <img src="/images/badge-appstore.png" width="163" height="48" alt="AppStore"/>
+                            </a>
+                        </div>
+                        <div class="gplay"><img src="/images/badge-googleplay-cs.png" width="143" height="48" alt="Coming Soon"/></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div>
+                        <div class="foot-links">
+                            <ul>
+                                <li><a href="http://www.pgi.com/agenday/support">Support</a></li>
+                                <li><a href="http://www.pgi.com/agenday/privacy/">Privacy</a></li>
+                                <li><a href="http://www.pgi.com/agenday/terms/">Terms of Use</a></li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="foot-social">
+                            <ul>
+                                <li><a class="soc-fb" href="https://www.facebook.com/PgiFans" target="_blank"></a></li>
+                                <li><a class="soc-tw" href="https://twitter.com/pgi" target="_blank"></a></li>
+                                <li><a class="soc-in" href="http://www.youtube.com/user/PGiPremiereGlobal" target="_blank"></a></li>
+                                <li><a class="soc-yt" href="http://www.linkedin.com/company/pgi_4863" target="_blank"></a></li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="foot-pgi">
+                            <a href="http://www.pgi.com/"><img src="/images/pgi-logo.png" width="219" height="50" alt="PGi Collaborative Advantage"/></a><br/>
+                            &copy; Premiere Global Services, Inc. and/or its affiliates.
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>   
+            </footer>
 		</div>
         <script type="text/javascript" src="/scripts/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="/scripts/modernizr.custom.31944.js"></script>
         <script type="text/javascript" src="/scripts/jquery.magnific-popup.min.js"></script>
         <script type="text/javascript">
-        	$(document).ready(function() {
-        		var ww = $(window).width();
-        		var currentTime = d.getHours();
-        		if (ww > 1024) {
-	        		if ( currentTime >= 5 && currentTime < 11) {
-	        			$('#hero').attr("src","/images/_dtp-hero-morning.jpg");
-	        		} else if (currentTime >= 11 && currentTime < 17) {
-	        			$('#hero').attr("src","/images/_dtp-hero-afternoon.jpg");
-	        		} else if (currentTime >= 17 && currentTime < 5) {
-	        			$('#hero').attr("src","/images/_dtp-hero-evening.jpg");
-	        		}
-	        	}
-        	});
+            function setHeroImage(ww) {
+                currentTime = d.getHours();
+                if (ww > 1023) {
+                    if (currentTime >= 5 && currentTime < 11) {
+                        $('#hero').attr("src","/images/_dtp-hero-morning.jpg");
+                    } else if (currentTime >= 11 && currentTime < 15) {
+                        $('#hero').attr("src","/images/_dtp-hero-afternoon.jpg");
+                    } else {
+                        $('#hero').attr("src","/images/_dtp-hero-evening.jpg");
+                    }
+                } else if (ww > 639) {
+                    if (currentTime >= 5 && currentTime < 11) {
+                        $('#hero').attr("src","/images/_tab-hero-morning.jpg");
+                    } else if (currentTime >= 11 && currentTime < 15) {
+                        $('#hero').attr("src","/images/_tab-hero-afternoon.jpg");
+                    } else {
+                        $('#hero').attr("src","/images/_tab-hero-evening.jpg");
+                    }
+                    $('#logo').find('img').attr({
+                        "src": "/images/agenday-logo.png",
+                        "width": "261",
+                        "height": "115"
+                    });
+                } else if (ww < 640) {
+                    if (currentTime >= 5 && currentTime < 11) {
+                        $('#hero').attr("src","/images/_mob-hero-morning.jpg");
+                    } else if (currentTime >= 11 && currentTime < 15) {
+                        $('#hero').attr("src","/images/_mob-hero-afternoon.jpg");
+                    } else {
+                        $('#hero').attr("src","/images/_mob-hero-evening.jpg");
+                    }
+                    $('#logo').find('img').attr({
+                        "src": "/images/agenday-logo-mob.png",
+                        "width": "155",
+                        "height": "70"
+                    });
+                }
+            }
+            $(document).ready(function() {
+                var ww = $(window).width();
+                var currentTime = d.getHours();
+                setHeroImage(ww);
+                $(window).resize(function() {
+                    ww = $(window).width();
+                    setHeroImage(ww);
+                });
+                $('.popup-vimeo').magnificPopup({
+                    disableOn: 700,
+                    type: 'iframe',
+                    mainClass: 'mfp-fade',
+                    removalDelay: 160,
+                    preloader: false,
+                    fixedContentPos: false
+                });
+            });
         </script>
 	</body>
 </html>
-<!-- Sicial Links
+<!-- Social Links
 	Facebook: https://www.facebook.com/PgiFans
 	Twitter: https://twitter.com/pgi
 	Google+: https://plus.google.com/103269103696719871245/posts
